@@ -15,6 +15,7 @@ parser.add_argument('--trunc', type=float, default=0.7, help='truncation, betwee
 parser.add_argument('--lat1', required=True, help='path to startpoint latents')
 parser.add_argument('--lat2', required=True, help='path to endpoint latents')
 parser.add_argument('--steps', type=int, default=200, help='number of intermediate steps')
+parser.add_argument('--startFileName', type=int, default=0, help='number of intermediate steps')
 opt = parser.parse_args()
 
 assert(opt.imageSize in [256,512])
@@ -63,8 +64,8 @@ with torch.no_grad():
     # save it
     output = output.to('cpu')
     output = (output + 1)/2
-    save_image(output, "file."+str(i)+".png")
-
+    save_image(output, "file."+str(startFileName)+".png")
+    startFileName++
     #noise_vector += n_delta
     #class_vector += c_delta
 
