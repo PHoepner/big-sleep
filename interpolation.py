@@ -16,7 +16,7 @@ parser.add_argument('--lat1', required=True, help='path to startpoint latents')
 parser.add_argument('--lat2', required=True, help='path to endpoint latents')
 parser.add_argument('--steps', type=int, default=200, help='number of intermediate steps')
 parser.add_argument('--startFileIndex', type=int, default=0, help='index to begin file naming')
-parser.add_argument('--fileName', type=string, default="file", help='file name')
+parser.add_argument('--fileName', type=str, default="file", help='file name')
 opt = parser.parse_args()
 
 assert(opt.imageSize in [256,512])
