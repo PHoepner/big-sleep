@@ -63,7 +63,7 @@ with torch.no_grad():
     # save it
     output = output.to('cpu')
     output = (output + 1)/2
-    save_image(output, "/morphs/file."+str(i)+".png")
+    save_image(output, "file."+str(i)+".png")
 
     #noise_vector += n_delta
     #class_vector += c_delta
