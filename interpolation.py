@@ -9,19 +9,11 @@ from PIL import Image
 import numpy as np
 from big_sleep.biggan import BigGAN
 from torchvision.utils import save_image
-
-#from pytorch_pretrained_biggan import (BigGAN, truncated_noise_sample, save_as_images)
-
-# use together with https://github.com/huggingface/pytorch-pretrained-BigGAN
-
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--imageSize', type=int, default=512, help='the height / width of the input image to network')
 parser.add_argument('--trunc', type=float, default=0.7, help='truncation, between 0.4 and 1')
 parser.add_argument('--lat1', required=True, help='path to startpoint latents')
 parser.add_argument('--lat2', required=True, help='path to endpoint latents')
-parser.add_argument('--savePath', default="out", help='path to store output')
-parser.add_argument('--name', default="farme", help='filename to store output')
 parser.add_argument('--steps', type=int, default=200, help='number of intermediate steps')
 opt = parser.parse_args()
 
@@ -71,7 +63,7 @@ with torch.no_grad():
     # save it
     output = output.to('cpu')
     output = (output + 1)/2
-    save_image(output, opt.savePath+"/morphs/file."+str(i)+".png")
+    save_image(output, "/morphs/file."+str(i)+".png")
 
     #noise_vector += n_delta
     #class_vector += c_delta
