@@ -64,8 +64,8 @@ with torch.no_grad():
     # save it
     output = output.to('cpu')
     output = (output + 1)/2
-    save_image(output, "file."+str(startFileName)+".png")
-    startFileName+= 1
+    save_image(output, "file."+str(startFileIndex)+".png")
+    startFileIndex+= 1
     #noise_vector += n_delta
     #class_vector += c_delta
 
