@@ -7,7 +7,8 @@ train = Imagine(
     text = text,
     lr = 0.07,
     save_every = 25,
-    save_progress = True
+    save_progress = True,
+    epochs = 1
 )
 
 train()
