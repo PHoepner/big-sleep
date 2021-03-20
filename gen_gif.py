@@ -8,7 +8,7 @@ train = Imagine(
     lr = 0.07,
     save_every = 2,
     save_progress = True,
-    epochs = 1
+    epochs = 2
 )
 
 train()
